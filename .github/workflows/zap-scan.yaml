@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Run ZAP Baseline Scan
         run: |
-          docker run --rm -t owasp/zap2docker-stable zap-baseline.py -t http://juice-shop:3000
+          docker run --rm -t zaproxy/zap-stable zap-full-scan.py -t http://juice-shop:3000 -r zap-report.html
 
 
 
