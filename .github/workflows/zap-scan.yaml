@@ -14,9 +14,15 @@ jobs:
           - 3000:3000
 
     steps:
-      - name: Run ZAP Baseline Scan
+      - name: Run ZAP Full Scan
         run: |
-          docker run --rm -t zaproxy/zap-stable zap-full-scan.py -t http://juice-shop:3000 -r zap-report.html
+          docker run --rm -t \
+            -v ${{ github.workspace }}:/zap/wrk \
+            zaproxy/zap-stable zap-full-scan.py \
+            -t http://juice-shop:3000 -r zap-report.html
 
-
-
+      - name: Upload ZAP Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-report
+          path: zap-report.html
