@@ -5,22 +5,22 @@ Enable attendees to practice **Dynamic Application Security Testing (DAST)** usi
 
 ---
 
-### Tasks
+## Tasks
 
-## 1. **Added a Github Action pipeline**  
+### 1. **Added a Github Action pipeline**  
    - The pipeline included:
      - A service to start the OWASP Juice Shop application in a Docker container.
      - A job to run an OWASP ZAP scan against the running application. (can use the docker image for that as well)
      - A job to generate and store the scan report as an artifact.
    ![Pipeline](screenshots/pipeline_run.png)
    
-## 2. **Analyze the report**  
+### 2. **Analyze the report**  
    - Identified two vulnerabilities from the report:
      - **A02:2021 – Cryptographic Failures**
      - **A03:2021 – Injection**
    ![Report](screenshots/zap_report.png) 
 
-## 3. Exploited the vulnerabilities manually using a web browser or tools like Postman. (for better understanding)
+### 3. Exploited the vulnerabilities manually using a web browser or tools like Postman. (for better understanding)
    - Screenshots of the exploited vulnerabilities:
    ![Manually Tested Vulnerabilities](screenshots/vulnerabilities.png)
    
@@ -36,7 +36,7 @@ Enable attendees to practice **Dynamic Application Security Testing (DAST)** usi
       ![Login as admin](screenshots/login_as_admin.png)
 
 
-## 4. **Impact and Suggested Fixes for the Vulnerabilities**  
+### 4. **Impact and Suggested Fixes for the Vulnerabilities**  
    - **A02:2021 – Cryptographic Failures**
       - **Impact:** Exposure of sensitive data, unauthorized access to users' information.
       - **Suggested Fixes:** Implement proper access controls, use secure tokens, and ensure sensitive data is encrypted both in transit and at rest.
