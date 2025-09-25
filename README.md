@@ -7,7 +7,7 @@ Enable attendees to practice **Dynamic Application Security Testing (DAST)** usi
 
 ### Tasks
 
-## 1. **Added a Github Action pipeline *  
+## 1. **Added a Github Action pipeline**  
    - The pipeline included:
      - A service to start the OWASP Juice Shop application in a Docker container.
      - A job to run an OWASP ZAP scan against the running application. (can use the docker image for that as well)
